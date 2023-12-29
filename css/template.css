@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: -40%;
+    transition: 1s;
+    display: flex;
+    padding-top: 5vh;
+    justify-content: center;
+    align-items: start;
+}
+
+#start-up {
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/pexels-fauxels-3184360.jpg');
+}
+
+#start-up .sidebar label {
+    padding: 10px 15px;
+    background-color: rgb(76, 0, 255);
+    border-radius: 20px;
+}
+
+#start-up .overlay {
+    z-index: 0;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#start-up .container {
+    z-index: 1;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+}
+
+#start-up .container .nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.268);
+}
+
+#start-up .container .nav label {
+    display: none;
+}
+
+#start-up .container .nav input {
+    display: none;
+}
+
+#start-up .container .nav span {
+    font-size: 30px;
+}
+
+#start-up .container .nav .menu {
+    display: flex;
+    width: 45%;
+    list-style-type: none;
+    justify-content: space-between;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#start-up .container .content {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-up .container .content div {
+    width: 50%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    color: white;
+}
+
+#start-up .container .content div p {
+    text-transform: uppercase;
+}
+
+#start-up .container .content div p:nth-of-type(3) {
+    text-transform: none;
+    width: 70%;
+}
+
+#start-up .container .content div p:first-of-type {
+    font-size: 30px;
+}
+
+#start-up .container .content div p:nth-of-type(2) {
+    font-size: 130px;
+    font-weight: bold;
+}
+
+#start-up .container .content div p:nth-of-type(4) {
+    font-size: 20px;
+    padding: 10px 30px;
+    background-color: rgb(81, 0, 255);
+}
+
+#experts {
+    height: 80vh;
+}
+
+#design {
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url('../images/pexels-buro-millennial-1438072.jpg');
+}
+
+#work {
+    min-height: 100vh;
+    padding-top: 15vh;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#work p {
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
+}
+
+#work ul {
+    display: flex;
+    list-style-type: none;
+    margin: 5vh 0;
+    justify-content: center;
+    gap: 20px;
+}
+
+#work ul li:hover {
+    color: rgb(123, 0, 255);
+}
+
+#work .gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+#work .gallery .product {
+    width: 32%;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#work .gallery .product .gray-overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.23);
+}
+
+#work .gallery .product .run {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.343);
+    height: 20vh;
+    width: 200%;
+    top: 0;
+    right: -50vw;
+    transform: rotate(45deg);
+}
+
+#work .gallery .product:hover .run {
+    animation-name: running;
+    animation-duration: 1s;
+}
+
+#work .gallery .product:hover .gray-overlay {
+    display: flex;
+}
+
+#work .gallery .product .gray-overlay i {
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(128, 0, 255);
+}
+
+#work .gallery .product:hover img {
+    transform: scale(1);
+}
+
+#work .gallery .product img {
+    width: 100%;
+    transform: scale(1.5);
+    transition: 1s;
+}
+
+@media (max-width:1500px) {
+    #start-up .container .nav {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    #start-up .container .nav .menu {
+        width: 90%;
+    }
+}
+
+@media (max-width:1000px) {
+    #start-up .container .nav {
+        padding: 0 5%;
+        flex-direction: row;
+    }
+    #start-up .container .content div {
+        width: 80%;
+    }
+    #start-up .container .nav .menu {
+        display: none;
+    }
+    #start-up .container .nav label {
+        display: inline;
+    }
+    #start-up .container .nav input:checked+.sidebar {
+        right: 0;
+    }
+}
+
+@media (max-width:700px) {
+    #start-up .container .content div p:nth-of-type(2) {
+        font-size: 80px;
+    }
+    #start-up .container .nav .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+@keyframes running {
+    from {
+        top: 0;
+        right: -50vw;
+    }
+    to {
+        top: 0;
+        right: 50vw;
+    }
+}
